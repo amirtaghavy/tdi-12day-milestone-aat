@@ -1,0 +1,15 @@
+TWITTER_CONSUMER_KEY = 'a9T8hjG4o5r3BlmT0ojCcHpK2'
+TWITTER_CONSUMER_SECRET = 'Cji3JGJxiI7pCzA2MJOsklYrN6cNSWAt1MXaExZ7K01ZmqnKaQ'
+TWITTER_ACCESS_TOKEN = '2495615876-hRlmV2adnaWlL9JqR7KBz2zAPesZi1ptwBRSSPN'
+TWITTER_ACCESS_TOKEN_SECRET = '8stVZlptYlQ5F8wAOAFJDaCELH23WG7LtL8jwRdrgl2AM'
+
+TWITTER_USERNAMES = [
+    ' traderstewie',
+    'the_chart_life',
+    'canuck2usa',
+    'sunrisetrader',
+    'tmltrader',
+    'scalpmaster1'
+]
+
+ALPHA_VANTAGE_API_KEY = 'ZKB06JKWMU4QACJO'
