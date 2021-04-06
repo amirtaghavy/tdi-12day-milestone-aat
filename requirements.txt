@@ -1,8 +1,7 @@
-streamlit
-pandas
-numpy
-plotly
-psycopg2
-requests    
-tweepy   
-alpha_vantage   
+streamlit==0.79.0
+pandas==1.0.5
+numpy==1.19.0
+plotly==4.14.3
+requests==2.25.1   
+tweepy==3.10.0
+alpha-vantage==2.3.1 

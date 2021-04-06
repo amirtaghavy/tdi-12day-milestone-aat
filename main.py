@@ -22,9 +22,9 @@ import datetime
 
 import tweepy
 import config
-# from stock_chart import get_stock_chart
-# from stocktwits_feed import get_stocktwits_feed
-# from twitter_feed import get_twitter_feed
+from stock_chart import get_stock_chart
+from stocktwits_feed import get_stocktwits_feed
+from twitter_feed import get_twitter_feed
 
 st.title('TDI 12Day Milestone Project')
 st.subheader('Created by: A. Taghavey - April, 2021')
@@ -48,11 +48,11 @@ dash_option = st.sidebar.selectbox('Select search platform:', (
 if len(dash_option) > 0:
     st.header('\''+dash_option+'\' on $'+ticker+':')
     if dash_option == 'charts':
-        pass
-        # get_stock_chart(ticker)
+        # pass
+        get_stock_chart(ticker)
     elif dash_option == 'stocktwits':
-        pass
-        # get_stocktwits_feed(ticker)
+        # pass
+        get_stocktwits_feed(ticker)
     elif dash_option == 'twitter':
-        pass
-        # get_twitter_feed(ticker)
+        # pass
+        get_twitter_feed(ticker)

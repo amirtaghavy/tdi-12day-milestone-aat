@@ -2,6 +2,8 @@ import streamlit as st
 import tweepy
 import config
 
+from diseminate import diseminate
+
 
 def get_twitter_feed(ticker):
     auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY,
@@ -15,10 +17,16 @@ def get_twitter_feed(ticker):
         st.subheader('Recent tweets on $'+ticker+': ')
         tweets = api.search('$'+ticker, lang='en', count=50)
         i = 0
+        outp = []
         for tweet in tweets:
             i += 1
-            st.markdown(str(i)+'. ***'+tweet.user.screen_name+'*** (*' +
-                        str(tweet.user.followers_count)+' followers*):'+tweet.text)
+            feed = (str(i)+'. ***'+tweet.user.screen_name+'*** (*' +
+                    str(tweet.user.followers_count)+' followers*):'+tweet.text)
+            flwrs = tweet.user.followers_count
+            outp.append([feed, flwrs])
+        # outputing results on streamlit:
+        diseminate(outp)
+
     else:  # feeling lucky option
         # tweak this to also extract a list of symbols from this twitter accounts + finviz charts
         st.subheader(
