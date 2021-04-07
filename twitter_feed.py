@@ -16,11 +16,9 @@ def get_twitter_feed(ticker):
     if show_opt == 'on $'+ticker:
         st.subheader('Recent tweets on $'+ticker+': ')
         tweets = api.search('$'+ticker, lang='en', count=50)
-        i = 0
         outp = []
         for tweet in tweets:
-            i += 1
-            feed = (str(i)+'. ***'+tweet.user.screen_name+'*** (*' +
+            feed = ('. ***'+tweet.user.screen_name+'*** (*' +
                     str(tweet.user.followers_count)+' followers*):'+tweet.text)
             flwrs = tweet.user.followers_count
             outp.append([feed, flwrs])
