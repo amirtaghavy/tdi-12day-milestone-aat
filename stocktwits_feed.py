@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 
 from diseminate import diseminate
+from get_dt import get_dt
 
 
 def get_stocktwits_feed(ticker):
@@ -13,18 +14,19 @@ def get_stocktwits_feed(ticker):
     response = requests.get(rq_adress)
     data = response.json()
     # st.write(data)
-    i = 0
     outp = []
     for msg in data['messages']:
-        i += 1
-        feed = str(i)+'. *'+msg['user']['username']+'* (**' + \
-            str(msg['user']['followers'])+'** followers): '+msg['body']
+        # st.write(msg['created_at'])
+        feed = '. **'+msg['user']['username']+'** (*' + \
+            str(msg['user']['followers']) + \
+            '* followers)`'+get_dt(msg, 'stocktwits')+'`: '+msg['body']
         flwrs = msg['user']['followers']
         outp.append([feed, flwrs])
+    # outputing results on streamlit:
     diseminate(outp)
-    outp.sort(reverse=True, key=lambda item: item[1])
-    for item in outp:
-        st.markdown(item[0])
+    # outp.sort(reverse=True, key=lambda item: item[1])
+    # for item in outp:
+    #     st.markdown(item[0])
     st.markdown('''
     **Aknowledgment**: \n 
     - *Data source*: Textual data/methods were acquired from [Stocktwits API](https://api.stocktwits.com/developers/docs/api) \n 
