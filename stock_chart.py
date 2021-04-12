@@ -4,6 +4,8 @@ from plotly.subplots import make_subplots
 from alpha_vantage.timeseries import TimeSeries
 
 import config
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 def get_stock_chart(ticker):

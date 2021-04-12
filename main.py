@@ -1,8 +1,11 @@
 # from alpha_vantage import
 '''
 pip3 install -r requirements.txt
+## to get package versions use this prompt in the terminal:
+#####> pip freeze > reqs.txt
 requests    #inquiring some online APIs
 tweepy      #interacting w/ twitter for python
+
 '''
 # on the terminal run this command:
 # streamlit run <fname>
@@ -22,6 +25,9 @@ import datetime
 
 import tweepy
 import config
+# from dotenv import load_dotenv
+# load_dotenv()
+
 from stock_chart import get_stock_chart
 from stocktwits_feed import get_stocktwits_feed
 from twitter_feed import get_twitter_feed

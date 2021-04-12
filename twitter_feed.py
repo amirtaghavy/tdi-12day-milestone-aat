@@ -1,9 +1,11 @@
+from get_dt import get_dt
+from diseminate import diseminate
 import streamlit as st
 import tweepy
-import config
 
-from diseminate import diseminate
-from get_dt import get_dt
+import config
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 def get_twitter_feed(ticker):

@@ -2,4 +2,6 @@
 .env
 log.txt
 reqs.txt
-config.py
+/venv
+__pycache__
+tdi-12day-milestone-aat/static/
